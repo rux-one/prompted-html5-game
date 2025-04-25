@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Carrot Collector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui">
+        <div id="score">Carrots: 0/5</div>
+        <div id="instructions">Use [1mLeft/Right[0m arrows to move, <b>Space</b> to jump</div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="touch-controls" class="hidden">
+        <button id="btn-left" aria-label="Move Left">&#8592;</button>
+        <button id="btn-jump" aria-label="Jump">&#8593;</button>
+        <button id="btn-right" aria-label="Move Right">&#8594;</button>
+    </div>
+    <div id="popup" class="hidden">
+        <div id="popup-content">
+            <h2>Congratz!</h2>
+            <p>You collected all the carrots!</p>
+            <button id="replayBtn">Replay</button>
+        </div>
+    </div>
+    <script type="module" src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #181c2b;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace, Arial, sans-serif;
+}
+#gameCanvas {
+  display: block;
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #22263a;
+  z-index: 1;
+  touch-action: none;
+}
+#ui {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  pointer-events: none;
+}
+#score {
+  font-size: 1.2em;
+  background: rgba(32,40,64,0.8);
+  border-radius: 8px;
+  padding: 8px 16px;
+  pointer-events: auto;
+}
+#instructions {
+  font-size: 1em;
+  background: rgba(32,40,64,0.7);
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-left: 16px;
+  pointer-events: auto;
+}
+#popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+#popup.hidden {
+  display: none;
+}
+#popup-content {
+  background: #242c44;
+  padding: 32px 48px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 32px #000a;
+}
+#popup button {
+  margin-top: 20px;
+  font-size: 1.1em;
+  padding: 10px 28px;
+  border-radius: 8px;
+  border: none;
+  background: #ffb347;
+  color: #22263a;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#touch-controls {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 20;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 16px 0 24px 0;
+  background: linear-gradient(to top, #181c2bcc 80%, transparent 100%);
+}
+#touch-controls.hidden {
+  display: none;
+}
+#touch-controls button {
+  background: #fff8;
+  color: #22263a;
+  border: 2px solid #ffb347;
+  border-radius: 50%;
+  font-size: 2.2em;
+  width: 64px;
+  height: 64px;
+  margin: 0 10px;
+  box-shadow: 0 2px 8px #0005;
+  transition: background 0.2s;
+  touch-action: manipulation;
+}
+#touch-controls button:active {
+  background: #ffb347;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  #ui {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 8px;
+  }
+  #score, #instructions {
+    font-size: 1em;
+    padding: 4px 8px;
+  }
+  #touch-controls {
+    gap: 10vw;
+    padding-bottom: 10vw;
+  }
+  #touch-controls button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.4em;
+  }
+}
+@media (max-width: 600px) {
+  #score, #instructions {
+    font-size: 0.9em;
+    padding: 6px 10px;
+  }
+  #popup-content {
+    padding: 18px 10px;
+  }
+}
